@@ -1,17 +1,3 @@
-.LayoutContainer {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #f2f2f2;
-}
-
-.nav-menu {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: unset;
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -30,17 +16,26 @@
   }
 }
 
-.add-pet {
+.addPet {
+  color: var(--dark);
   background: transparent;
-  border: 2px solid black;
-  color: black;
+  border: 3px solid var(--dark);
+  font-weight: 500;
+  border-radius: 25px;
+  padding: 0.3rem 2rem;
+
+  transition: 0.4s all;
+}
+
+.addPet:hover {
+  background: var(--dark);
+  color: white;
 }
 
 .card {
-  border-radius: 0;
   box-shadow: 0px 0px 6px 4px #dcdcdc;
   padding: 1rem;
-  border-radius: 5px;
+  /* border-radius: 5px !important; */
   background: white;
   transition: 0.3s all ease;
 }
@@ -52,36 +47,58 @@
 
 .card-title h4 {
   font-size: 16px;
-  color: black;
+  color: var(--dark);
   margin-bottom: 10px;
 }
 
 .card-text {
-  color: black;
+  color: var(--dark);
   font-size: 14px;
   display: flex;
-  align-items: self-end;
+  align-items: center;
   justify-content: flex-start;
   gap: 0.8rem;
   margin-bottom: 5px;
+  line-height: 20px;
 }
 
-.card-text i {
-  color: black;
-  font-size: 14px;
+.card-text > span:nth-child(1) {
+  position: relative;
+}
+.card-text > span:nth-child(2) {
+  margin-left: 10px;
+}
+.fa-regular.fa-circle.fa-sm {
+  color: var(--dark);
+  font-size: 11px;
+  position: absolute;
+  top: 0px;
 }
 
-.buttonS {
-  color: white;
-  background: var(--dark);
-  border: 2px solid white;
-  transition: 0.4s all;
-  margin-top: 2rem;
-  width: 150px;
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+}
+.petCard {
+  width: 390px;
+  box-sizing: border-box;
 }
 
-.buttonS:hover {
-  border: 2px solid var(--dark);
-  background: white;
-  color: black;
+@media only screen and (max-width: 576px) {
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-items: center;
+    gap: 1rem; */
+  }
+  .petCard {
+    max-width: 340px;
+    /* width: 380px; */
+  }
 }

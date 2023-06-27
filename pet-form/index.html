@@ -11,15 +11,34 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.112.5" />
-    <title>Home Page</title>
+    <title>Owner Profile</title>
 
     <link
       rel="canonical"
       href="https://getbootstrap.com/docs/5.3/examples/sign-in/"
     />
     <!-- Custom styles for this template -->
-    <link href="profile.css" rel="stylesheet" />
+    <link href="../main.css" rel="stylesheet" />
+
+    <link href="owner-form.css" rel="stylesheet" />
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
@@ -104,7 +123,7 @@
               "
             >
               <a class="nav-menu" href="/home">Home</a>
-              <a class="nav-menu" href="/profile">Profile</a>
+              <a class="nav-menu" href="/owner-form">Profile</a>
               <a class="nav-menu" href="/check-in">Check-In</a>
             </div>
           </div>
@@ -115,7 +134,39 @@
           <form class="form" onSubmit="handleSubmit">
             <div class="d-flex flex-column gap-3">
               <div class="form-group">
-                <label for="firstName">First Name</label>
+                <label class="mb-2">Is your pet a mixed breed?</label>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="mixedBreed-yes"
+                    name="mixedBreed"
+                    value="true"
+                    checked
+                  />
+                  <label for="mixedBreed-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="mixedBreed-no"
+                    name="mixedBreed"
+                    value="false"
+                  />
+                  <label for="mixedBreed-no">No</label>
+                </div>
+              </div>
+
+              <!-- BREED SELECTOR -->
+              <div class="form-group">
+                <label>Breed</label>
+                <select id="breed-select">
+                  <option value="" disabled selected>Select Breed</option>
+                  <!-- Rendered breed options -->
+                </select>
+              </div>
+
+              <div class="form-group w-100">
+                <label class="mb-1" for="firstName">Pet's name</label>
                 <input
                   type="text"
                   class="form-control"
@@ -127,19 +178,137 @@
               </div>
 
               <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label class="mb-2">Are you the pet's owner?</label>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="owner-yes"
+                    name="owner"
+                    value="true"
+                    checked
+                  />
+                  <label for="owner-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="owner-no"
+                    name="owner"
+                    value="false"
+                  />
+                  <label for="owner-no">No</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2">Is your pet male or female?</label>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="gender-male"
+                    name="gender"
+                    value="true"
+                    checked
+                  />
+                  <label for="gender-male">Male</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="gender-female"
+                    name="gender"
+                    value="false"
+                  />
+                  <label for="gender-female">Female</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2">Is your pet neutered/spayed?</label>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="neutered-yes"
+                    name="neutered"
+                    value="true"
+                    checked
+                  />
+                  <label for="neutered-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="neutered-no"
+                    name="neutered"
+                    value="false"
+                  />
+                  <label for="neutered-no">No</label>
+                </div>
+              </div>
+
+              <div class="form-group w-100">
+                <label class="mb-1" for="firstName">Pet's color</label>
                 <input
                   type="text"
                   class="form-control"
-                  name="last_name"
+                  name="color"
                   onChange="{handleChange}"
-                  placeholder="Last Name"
+                  placeholder="Your pet's color"
                   required
                 />
               </div>
 
               <div class="form-group">
-                <label for="address">Address</label>
+                <label class="mb-2">Do you know the pet's date of birth?</label>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="knowsDOB-yes"
+                    name="knowsDOB"
+                    value="true"
+                    checked
+                  />
+                  <label for="knowsDOB-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="knowsDOB-no"
+                    name="knowsDOB"
+                    value="false"
+                  />
+                  <label for="knowsDOB-no">No</label>
+                </div>
+              </div>
+
+              <!-- <div class="inputsGroup">
+                <div class="form-group w-100">
+                  <label class="mb-1" for="firstName">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="first_name"
+                    onChange="{handleChange}"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group w-100">
+                  <label class="mb-1" for="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="last_name"
+                    onChange="{handleChange}"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="mb-1" for="address">Address</label>
                 <input
                   type="text"
                   class="form-control"
@@ -150,43 +319,45 @@
                 />
               </div>
 
-              <div class="form-group">
-                <label for="city">City</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="city"
-                  onChange="{handleChange}"
-                  placeholder="City"
-                  required
-                />
+              <div class="inputsGroup">
+                <div class="form-group w-100">
+                  <label class="mb-1" for="city">City</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="city"
+                    onChange="{handleChange}"
+                    placeholder="City"
+                    required
+                  />
+                </div>
+
+                <div class="form-group w-100">
+                  <label class="mb-1" for="state">State</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="state"
+                    onChange="{handleChange}"
+                    placeholder="State"
+                    required
+                  />
+                </div>
+                <div class="form-group w-100">
+                  <label class="mb-1" for="zipCode">Zip Code</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="zip"
+                    onChange="{handleChange}"
+                    placeholder="Zip Code"
+                    required
+                  />
+                </div>
               </div>
 
               <div class="form-group">
-                <label for="state">State</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="state"
-                  onChange="{handleChange}"
-                  placeholder="State"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="zipCode">Zip Code</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="zip"
-                  onChange="{handleChange}"
-                  placeholder="Zip Code"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
+                <label class="mb-1" for="phoneNumber">Phone Number</label>
                 <input
                   type="tel"
                   class="form-control"
@@ -198,7 +369,7 @@
               </div>
 
               <div class="form-group">
-                <label for="email">Email</label>
+                <label class="mb-1" for="email">Email</label>
                 <input
                   type="email"
                   class="form-control"
@@ -209,7 +380,7 @@
                 />
               </div>
 
-              <div class="form-group">
+              <div class="form-group mb-5 mt-4">
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -225,11 +396,11 @@
                     promotional communications.
                   </label>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="d-flex justify-content-end">
-              <button class="btn btn-primary" type="submit">Submit</button>
+              <button class="btnDark" type="submit">Submit</button>
             </div>
           </form>
         </div>
