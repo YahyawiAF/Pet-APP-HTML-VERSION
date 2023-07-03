@@ -20,7 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="../main.css" rel="stylesheet" />
 
-    <link href="owner-form.css" rel="stylesheet" />
+    <link href="pet-form.css" rel="stylesheet" />
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Family -->
@@ -131,6 +131,25 @@
       </header>
       <div className="flex-grow-1" style="margin-top: 8rem">
         <div class="container">
+          <form class="form">
+            <label class="position-absolute top-10"
+              >Please choose your pet's species</label
+            >
+            <!-- <button class="btnDark backBtn">
+              <i class="fa-solid fa-arrow-left styledIcon"></i> Back
+            </button> -->
+            <div class="form-group">
+              <div class="speciesContainer">
+                <div class="species" title="cat">
+                  <a href="#"><img src="../images/cat.png" alt="cat" /></a>
+                </div>
+                <div class="species" title="dog">
+                  <a href="#"><img src="../images/dog.png" alt="dog" /></a>
+                </div>
+              </div>
+            </div>
+          </form>
+
           <form class="form" onSubmit="handleSubmit">
             <div class="d-flex flex-column gap-3">
               <div class="form-group">
@@ -157,10 +176,13 @@
               </div>
 
               <!-- BREED SELECTOR -->
-              <div class="form-group">
-                <label>Breed</label>
-                <select id="breed-select">
-                  <option value="" disabled selected>Select Breed</option>
+              <div class="form-group w-100">
+                <label for="breed-select">Breed</label>
+                <select id="breed-select" class="selector mt-1">
+                  <option value="">test 1</option>
+                  <option value="">test 2</option>
+                  <option value="">test 3</option>
+                  <option value="">test 4</option>
                   <!-- Rendered breed options -->
                 </select>
               </div>
@@ -197,6 +219,33 @@
                     value="false"
                   />
                   <label for="owner-no">No</label>
+                </div>
+              </div>
+
+              <div class="inputsGroup">
+                <div class="form-group w-100">
+                  <label class="mb-1" for="ownerName">Owner's name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="ownerName"
+                    onChange="{handleChange}"
+                    placeholder="Enter owner's name"
+                    required
+                  />
+                </div>
+                <div class="form-group w-100">
+                  <label class="mb-1" for="ownerNumber"
+                    >Owner's phone number</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    name="ownerNumber"
+                    onChange="{handleChange}"
+                    placeholder="Enter owner's phone number"
+                    required
+                  />
                 </div>
               </div>
 
@@ -278,6 +327,127 @@
                     value="false"
                   />
                   <label for="knowsDOB-no">No</label>
+                </div>
+              </div>
+
+              <div class="form-group w-100">
+                <label class="mb-1" for="DOB">Date of birth</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="DOB"
+                  onChange="{handleChange}"
+                  required
+                />
+              </div>
+              <div class="inputsGroup">
+                <div class="form-group w-100">
+                  <label for="yearOfBirth">Approximate years</label>
+                  <select id="yearOfBirth" class="selector mt-1">
+                    <option value="">Less than one year</option>
+                    <option value="">20 years or above</option>
+                    <option value="">1 year</option>
+                    <option value="">2 years</option>
+                    <option value="">3 years</option>
+                    <option value="">4 years</option>
+                    <option value="">5 years</option>
+                    <option value="">6 years</option>
+                    <option value="">7 years</option>
+                    <option value="">8 years</option>
+                    <option value="">9 years</option>
+                    <option value="">10 years</option>
+                    <option value="">11 years</option>
+                    <option value="">12 years</option>
+                    <option value="">13 years</option>
+                    <option value="">14 years</option>
+                    <option value="">15 years</option>
+                    <option value="">16 years</option>
+                    <option value="">17 years</option>
+                    <option value="">18 years</option>
+                    <option value="">19 years</option>
+                    <!-- Rendered breed options -->
+                  </select>
+                </div>
+                <div class="form-group w-100">
+                  <label for="monthOfBirth">Approximate months</label>
+                  <select id="monthOfBirth" class="selector mt-1">
+                    <option value="">Less than one month</option>
+                    <option value="">1 month</option>
+                    <option value="">2 months</option>
+                    <option value="">3 months</option>
+                    <option value="">4 months</option>
+                    <option value="">5 months</option>
+                    <option value="">6 months</option>
+                    <option value="">7 months</option>
+                    <option value="">8 months</option>
+                    <option value="">9 months</option>
+                    <option value="">10 months</option>
+                    <option value="">11 months</option>
+                    <!-- Rendered breed options -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2"
+                  >Is this your pet's first vaccination?</label
+                >
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="isFirstVaccination-yes"
+                    name="isFirstVaccination"
+                    value="true"
+                    checked
+                  />
+                  <label for="isFirstVaccination-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="isFirstVaccination-no"
+                    name="isFirstVaccination"
+                    value="false"
+                  />
+                  <label for="isFirstVaccination-no">No</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="VaccineTextarea"
+                  >When was your pet last vaccine and what type was it?</label
+                >
+
+                <textarea
+                  class="mt-1"
+                  name="VaccineTextarea"
+                  id="VaccineTextarea"
+                  rows="2"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="mb-2"
+                  >Did your pet have reactions to a vaccine in the past?</label
+                >
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="vaccinationReaction-yes"
+                    name="vaccinationReaction"
+                    value="true"
+                    checked
+                  />
+                  <label for="vaccinationReaction-yes">Yes</label>
+                </div>
+                <div class="form-check ps-0">
+                  <input
+                    type="radio"
+                    id="vaccinationReaction-no"
+                    name="vaccinationReaction"
+                    value="false"
+                  />
+                  <label for="vaccinationReaction-no">No</label>
                 </div>
               </div>
 

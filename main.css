@@ -78,6 +78,35 @@ input::placeholder {
   padding: 20px;
   border-radius: 6px;
   margin: 0 auto 4rem;
+  position: relative;
+}
+
+.selector {
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #dee2e6;
+}
+.selector:active,
+.selector:focus {
+  outline: none;
+  border-color: gray;
+  box-shadow: 0 0 0 0.2rem #00000040;
+}
+textarea {
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #dee2e6;
+  resize: none !important;
+}
+textarea:active,
+textarea:focus {
+  outline: none;
+  border-color: gray;
+  box-shadow: 0 0 0 0.2rem #00000040;
 }
 
 @media only screen and (max-width: 576px) {
