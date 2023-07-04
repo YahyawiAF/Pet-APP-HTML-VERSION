@@ -11,7 +11,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Hugo 0.112.5" />
-    <title>Owner Profile</title>
+    <title>Check In</title>
 
     <link
       rel="canonical"
@@ -20,7 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="../main.css" rel="stylesheet" />
 
-    <link href="owner-form.css" rel="stylesheet" />
+    <link href="check-in.css" rel="stylesheet" />
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Family -->
@@ -116,8 +116,8 @@
             </div>
             <div class="navMenuContainer">
               <a class="nav-menu" href="/home">Home</a>
-              <a class="nav-menu active" href="/owner-form">Profile</a>
-              <a class="nav-menu" href="/check-in">Check-In</a>
+              <a class="nav-menu" href="/owner-form">Profile</a>
+              <a class="nav-menu active" href="/check-in">Check-In</a>
               <a class="logoutBtn" href="#"
                 ><span>LOGOUT</span
                 ><span
@@ -127,135 +127,93 @@
           </div>
         </div>
       </header>
+
       <div class="wrapper">
         <div class="container">
-          <form class="form" onSubmit="handleSubmit">
-            <div class="d-flex flex-column gap-3">
-              <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label class="mb-1" for="firstName">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="first_name"
-                    onChange="{handleChange}"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-
-                <div class="form-group w-100">
-                  <label class="mb-1" for="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="last_name"
-                    onChange="{handleChange}"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-1" for="address">Address</label>
+          <form class="form">
+            <!-- PetCheckItem components -->
+            <div class="FormGroupS mb-4 d-flex flex-column" controlId="checkIn">
+              <div class="FormCheckS inline">
+                <label class="form-check-label" for="checkIn">Pet Name</label>
                 <input
-                  type="text"
-                  class="form-control"
-                  name="address"
-                  onChange="{handleChange}"
-                  placeholder="Address"
-                  required
+                  class="form-check-input"
+                  type="checkbox"
+                  name="checkIn"
+                  checked
                 />
               </div>
-
-              <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label class="mb-1" for="city">City</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="city"
-                    onChange="{handleChange}"
-                    placeholder="City"
-                    required
-                  />
+              <button class="ButtonS" variant="primary">
+                <svg>...</svg>
+              </button>
+              <div class="StyledDiv d-block">
+                <div>
+                  <span>Species:</span>
+                  <span>DOG</span>
                 </div>
-
-                <div class="form-group w-100">
-                  <label class="mb-1" for="state">State</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="state"
-                    onChange="{handleChange}"
-                    placeholder="State"
-                    required
-                  />
+                <div>
+                  <span>Breed:</span>
+                  <span>Breed Label</span>
                 </div>
-                <div class="form-group w-100">
-                  <label class="mb-1" for="zipCode">Zip Code</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="zip"
-                    onChange="{handleChange}"
-                    placeholder="Zip Code"
-                    required
-                  />
+                <div>
+                  <span>Gender:</span>
+                  <span>Female</span>
+                </div>
+                <div>
+                  <span>Date of Birth:</span>
+                  <span>Birth Date</span>
                 </div>
               </div>
-
-              <div class="form-group">
-                <label class="mb-1" for="phoneNumber">Phone Number</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  name="phone"
-                  onChange="{handleChange}"
-                  placeholder="Phone Number"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="mb-1" for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  onChange="{handleChange}"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-
-              <div class="form-group mb-5 mt-4">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="communication_consent"
-                    checked="{ownerInfo.communication_consent}"
-                    onChange="{handleChangeCheckbox}"
-                  />
-                  <label class="form-check-label" for="communicationConsent">
-                    Check this box to give your consent to receive text, calls,
-                    and/or email messages using your phone number and email
-                    above for login help, pet reminders, and applicable
-                    promotional communications.
-                  </label>
+              <div class="GridS">
+                <div class="Form.Group">
+                  <div class="FormCheckS2 inline">
+                    <label class="form-check-label" for="pregnant"
+                      >Pregnant Question</label
+                    >
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="pregnant"
+                      checked
+                    />
+                  </div>
+                </div>
+                <div class="Form.Group">
+                  <div class="FormCheckS2 inline">
+                    <label class="form-check-label" for="sick"
+                      >Sick Question</label
+                    >
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="sick"
+                      checked
+                    />
+                  </div>
+                </div>
+                <div class="Form.Group">
+                  <div class="FormCheckS2 inline">
+                    <label class="form-check-label" for="heartwormPrevention"
+                      >Heartworm Prevention</label
+                    >
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="heartwormPrevention"
+                      checked
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-
+            <!-- End of PetCheckItem components -->
             <div class="d-flex justify-content-end">
-              <button class="btnDark" type="submit">Submit</button>
+              <button class="SubmitButton" variant="primary" type="submit">
+                Check In Button
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

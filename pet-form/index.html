@@ -114,22 +114,20 @@
                 </svg>
               </a>
             </div>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-              "
-            >
+            <div class="navMenuContainer">
               <a class="nav-menu" href="/home">Home</a>
               <a class="nav-menu" href="/owner-form">Profile</a>
               <a class="nav-menu" href="/check-in">Check-In</a>
+              <a class="logoutBtn" href="#"
+                ><span>LOGOUT</span
+                ><span
+                  ><i class="fa-solid fa-arrow-right-from-bracket"></i></span
+              ></a>
             </div>
           </div>
         </div>
       </header>
-      <div className="flex-grow-1" style="margin-top: 8rem">
+      <div class="wrapper">
         <div class="container">
           <form class="form">
             <label class="position-absolute top-10"
@@ -150,423 +148,315 @@
             </div>
           </form>
 
-          <form class="form" onSubmit="handleSubmit">
-            <div class="d-flex flex-column gap-3">
-              <div class="form-group">
-                <label class="mb-2">Is your pet a mixed breed?</label>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="mixedBreed-yes"
-                    name="mixedBreed"
-                    value="true"
-                    checked
-                  />
-                  <label for="mixedBreed-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="mixedBreed-no"
-                    name="mixedBreed"
-                    value="false"
-                  />
-                  <label for="mixedBreed-no">No</label>
-                </div>
+          <form class="form d-flex flex-column gap-4" onSubmit="handleSubmit">
+            <!-- <div class="d-flex flex-column gap-3"> -->
+            <div class="form-group">
+              <label class="mb-2">Is your pet a mixed breed?</label>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="mixedBreed-yes"
+                  name="mixedBreed"
+                  value="true"
+                  checked
+                />
+                <label for="mixedBreed-yes">Yes</label>
               </div>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="mixedBreed-no"
+                  name="mixedBreed"
+                  value="false"
+                />
+                <label for="mixedBreed-no">No</label>
+              </div>
+            </div>
 
-              <!-- BREED SELECTOR -->
+            <div class="form-group w-100">
+              <label for="breed-select" class="mb-1">Breed</label>
+              <select
+                id="breed-select"
+                class="form-select"
+                aria-label="Default select example"
+              >
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="form-group w-100">
+              <label class="mb-1" for="petName">Pet's name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="petName"
+                id="petName"
+                onChange="{handleChange}"
+                placeholder="Enter pet's name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="mb-2">Are you the pet's owner?</label>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="owner-yes"
+                  name="owner"
+                  value="true"
+                  checked
+                />
+                <label for="owner-yes">Yes</label>
+              </div>
+              <div class="form-check ps-0">
+                <input type="radio" id="owner-no" name="owner" value="false" />
+                <label for="owner-no">No</label>
+              </div>
+            </div>
+
+            <div class="inputsGroup">
               <div class="form-group w-100">
-                <label for="breed-select">Breed</label>
-                <select id="breed-select" class="selector mt-1">
-                  <option value="">test 1</option>
-                  <option value="">test 2</option>
-                  <option value="">test 3</option>
-                  <option value="">test 4</option>
-                  <!-- Rendered breed options -->
+                <label class="mb-1" for="ownerName">Owner's name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="ownerName"
+                  id="ownerName"
+                  onChange="{handleChange}"
+                  placeholder="Enter owner's name"
+                  required
+                />
+              </div>
+              <div class="form-group w-100">
+                <label class="mb-1" for="ownerNumber"
+                  >Owner's phone number</label
+                >
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="ownerNumber"
+                  id="ownerNumber"
+                  onChange="{handleChange}"
+                  placeholder="Enter owner's phone number"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="mb-2">Is your pet male or female?</label>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="gender-male"
+                  name="gender"
+                  value="true"
+                  checked
+                />
+                <label for="gender-male">Male</label>
+              </div>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="gender-female"
+                  name="gender"
+                  value="false"
+                />
+                <label for="gender-female">Female</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="mb-2">Is your pet neutered/spayed?</label>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="neutered-yes"
+                  name="neutered"
+                  value="true"
+                  checked
+                />
+                <label for="neutered-yes">Yes</label>
+              </div>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="neutered-no"
+                  name="neutered"
+                  value="false"
+                />
+                <label for="neutered-no">No</label>
+              </div>
+            </div>
+
+            <div class="form-group w-100">
+              <label class="mb-1" for="petColor">Pet's color</label>
+              <input
+                type="text"
+                class="form-control"
+                name="petColor"
+                id="petColor"
+                onChange="{handleChange}"
+                placeholder="Your pet's color"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="mb-2">Do you know the pet's date of birth?</label>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="knowsDOB-yes"
+                  name="knowsDOB"
+                  value="true"
+                  checked
+                />
+                <label for="knowsDOB-yes">Yes</label>
+              </div>
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="knowsDOB-no"
+                  name="knowsDOB"
+                  value="false"
+                />
+                <label for="knowsDOB-no">No</label>
+              </div>
+            </div>
+
+            <div class="form-group w-100">
+              <label class="mb-1" for="DOB">Date of birth</label>
+              <input
+                type="date"
+                class="form-control"
+                name="DOB"
+                id="DOB"
+                onChange="{handleChange}"
+                required
+              />
+            </div>
+
+            <div class="inputsGroup">
+              <div class="form-group w-100">
+                <label for="yearOfBirth" class="mb-1">Approximate years</label>
+                <select
+                  id="yearOfBirth"
+                  name="yearOfBirth"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option value="">Less than one year</option>
+                  <option value="">20 years or above</option>
+                  <option value="">1 year</option>
+                  <option value="">2 years</option>
+                  <option value="">3 years</option>
+                  <option value="">4 years</option>
+                  <option value="">5 years</option>
+                  <option value="">6 years</option>
+                  <option value="">7 years</option>
+                  <option value="">8 years</option>
+                  <option value="">9 years</option>
+                  <option value="">10 years</option>
+                  <option value="">11 years</option>
+                  <option value="">12 years</option>
+                  <option value="">13 years</option>
+                  <option value="">14 years</option>
+                  <option value="">15 years</option>
+                  <option value="">16 years</option>
+                  <option value="">17 years</option>
+                  <option value="">18 years</option>
+                  <option value="">19 years</option>
                 </select>
               </div>
 
               <div class="form-group w-100">
-                <label class="mb-1" for="firstName">Pet's name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="first_name"
-                  onChange="{handleChange}"
-                  placeholder="First Name"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2">Are you the pet's owner?</label>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="owner-yes"
-                    name="owner"
-                    value="true"
-                    checked
-                  />
-                  <label for="owner-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="owner-no"
-                    name="owner"
-                    value="false"
-                  />
-                  <label for="owner-no">No</label>
-                </div>
-              </div>
-
-              <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label class="mb-1" for="ownerName">Owner's name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="ownerName"
-                    onChange="{handleChange}"
-                    placeholder="Enter owner's name"
-                    required
-                  />
-                </div>
-                <div class="form-group w-100">
-                  <label class="mb-1" for="ownerNumber"
-                    >Owner's phone number</label
-                  >
-                  <input
-                    type="tel"
-                    class="form-control"
-                    name="ownerNumber"
-                    onChange="{handleChange}"
-                    placeholder="Enter owner's phone number"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2">Is your pet male or female?</label>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="gender-male"
-                    name="gender"
-                    value="true"
-                    checked
-                  />
-                  <label for="gender-male">Male</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="gender-female"
-                    name="gender"
-                    value="false"
-                  />
-                  <label for="gender-female">Female</label>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2">Is your pet neutered/spayed?</label>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="neutered-yes"
-                    name="neutered"
-                    value="true"
-                    checked
-                  />
-                  <label for="neutered-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="neutered-no"
-                    name="neutered"
-                    value="false"
-                  />
-                  <label for="neutered-no">No</label>
-                </div>
-              </div>
-
-              <div class="form-group w-100">
-                <label class="mb-1" for="firstName">Pet's color</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="color"
-                  onChange="{handleChange}"
-                  placeholder="Your pet's color"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2">Do you know the pet's date of birth?</label>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="knowsDOB-yes"
-                    name="knowsDOB"
-                    value="true"
-                    checked
-                  />
-                  <label for="knowsDOB-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="knowsDOB-no"
-                    name="knowsDOB"
-                    value="false"
-                  />
-                  <label for="knowsDOB-no">No</label>
-                </div>
-              </div>
-
-              <div class="form-group w-100">
-                <label class="mb-1" for="DOB">Date of birth</label>
-                <input
-                  type="date"
-                  class="form-control"
-                  name="DOB"
-                  onChange="{handleChange}"
-                  required
-                />
-              </div>
-              <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label for="yearOfBirth">Approximate years</label>
-                  <select id="yearOfBirth" class="selector mt-1">
-                    <option value="">Less than one year</option>
-                    <option value="">20 years or above</option>
-                    <option value="">1 year</option>
-                    <option value="">2 years</option>
-                    <option value="">3 years</option>
-                    <option value="">4 years</option>
-                    <option value="">5 years</option>
-                    <option value="">6 years</option>
-                    <option value="">7 years</option>
-                    <option value="">8 years</option>
-                    <option value="">9 years</option>
-                    <option value="">10 years</option>
-                    <option value="">11 years</option>
-                    <option value="">12 years</option>
-                    <option value="">13 years</option>
-                    <option value="">14 years</option>
-                    <option value="">15 years</option>
-                    <option value="">16 years</option>
-                    <option value="">17 years</option>
-                    <option value="">18 years</option>
-                    <option value="">19 years</option>
-                    <!-- Rendered breed options -->
-                  </select>
-                </div>
-                <div class="form-group w-100">
-                  <label for="monthOfBirth">Approximate months</label>
-                  <select id="monthOfBirth" class="selector mt-1">
-                    <option value="">Less than one month</option>
-                    <option value="">1 month</option>
-                    <option value="">2 months</option>
-                    <option value="">3 months</option>
-                    <option value="">4 months</option>
-                    <option value="">5 months</option>
-                    <option value="">6 months</option>
-                    <option value="">7 months</option>
-                    <option value="">8 months</option>
-                    <option value="">9 months</option>
-                    <option value="">10 months</option>
-                    <option value="">11 months</option>
-                    <!-- Rendered breed options -->
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2"
-                  >Is this your pet's first vaccination?</label
+                <label for="monthOfBirth">Approximate months</label>
+                <select
+                  id="monthOfBirth"
+                  name="monthOfBirth"
+                  class="form-select"
+                  aria-label="Default select example"
                 >
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="isFirstVaccination-yes"
-                    name="isFirstVaccination"
-                    value="true"
-                    checked
-                  />
-                  <label for="isFirstVaccination-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="isFirstVaccination-no"
-                    name="isFirstVaccination"
-                    value="false"
-                  />
-                  <label for="isFirstVaccination-no">No</label>
-                </div>
+                  <option value="">Less than one month</option>
+                  <option value="">1 month</option>
+                  <option value="">2 months</option>
+                  <option value="">3 months</option>
+                  <option value="">4 months</option>
+                  <option value="">5 months</option>
+                  <option value="">6 months</option>
+                  <option value="">7 months</option>
+                  <option value="">8 months</option>
+                  <option value="">9 months</option>
+                  <option value="">10 months</option>
+                  <option value="">11 months</option>
+                </select>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="VaccineTextarea"
-                  >When was your pet last vaccine and what type was it?</label
-                >
-
-                <textarea
-                  class="mt-1"
-                  name="VaccineTextarea"
-                  id="VaccineTextarea"
-                  rows="2"
-                ></textarea>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-2"
-                  >Did your pet have reactions to a vaccine in the past?</label
-                >
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="vaccinationReaction-yes"
-                    name="vaccinationReaction"
-                    value="true"
-                    checked
-                  />
-                  <label for="vaccinationReaction-yes">Yes</label>
-                </div>
-                <div class="form-check ps-0">
-                  <input
-                    type="radio"
-                    id="vaccinationReaction-no"
-                    name="vaccinationReaction"
-                    value="false"
-                  />
-                  <label for="vaccinationReaction-no">No</label>
-                </div>
-              </div>
-
-              <!-- <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label class="mb-1" for="firstName">First Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="first_name"
-                    onChange="{handleChange}"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-
-                <div class="form-group w-100">
-                  <label class="mb-1" for="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="last_name"
-                    onChange="{handleChange}"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-1" for="address">Address</label>
+            <div class="form-group">
+              <label class="mb-2">Is this your pet's first vaccination?</label>
+              <div class="form-check ps-0">
                 <input
-                  type="text"
-                  class="form-control"
-                  name="address"
-                  onChange="{handleChange}"
-                  placeholder="Address"
-                  required
+                  type="radio"
+                  id="isFirstVaccination-yes"
+                  name="isFirstVaccination"
+                  value="true"
+                  checked
                 />
+                <label for="isFirstVaccination-yes">Yes</label>
               </div>
-
-              <div class="inputsGroup">
-                <div class="form-group w-100">
-                  <label class="mb-1" for="city">City</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="city"
-                    onChange="{handleChange}"
-                    placeholder="City"
-                    required
-                  />
-                </div>
-
-                <div class="form-group w-100">
-                  <label class="mb-1" for="state">State</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="state"
-                    onChange="{handleChange}"
-                    placeholder="State"
-                    required
-                  />
-                </div>
-                <div class="form-group w-100">
-                  <label class="mb-1" for="zipCode">Zip Code</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="zip"
-                    onChange="{handleChange}"
-                    placeholder="Zip Code"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label class="mb-1" for="phoneNumber">Phone Number</label>
+              <div class="form-check ps-0">
                 <input
-                  type="tel"
-                  class="form-control"
-                  name="phone"
-                  onChange="{handleChange}"
-                  placeholder="Phone Number"
-                  required
+                  type="radio"
+                  id="isFirstVaccination-no"
+                  name="isFirstVaccination"
+                  value="false"
                 />
+                <label for="isFirstVaccination-no">No</label>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label class="mb-1" for="email">Email</label>
+            <div class="form-group">
+              <label for="VaccineTextarea" class="mb-1"
+                >When was your pet last vaccine and what type was it?</label
+              >
+              <textarea
+                class="form-control"
+                placeholder="Approximate date and type of vaccine"
+                id="VaccineTextarea"
+                rows="2"
+                style="resize: none"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="mb-2"
+                >Did your pet have reactions to a vaccine in the past?</label
+              >
+              <div class="form-check ps-0">
                 <input
-                  type="email"
-                  class="form-control"
-                  name="email"
-                  onChange="{handleChange}"
-                  placeholder="Email"
-                  required
+                  type="radio"
+                  id="vaccinationReaction-yes"
+                  name="vaccinationReaction"
+                  value="true"
+                  checked
                 />
+                <label for="vaccinationReaction-yes">Yes</label>
               </div>
-
-              <div class="form-group mb-5 mt-4">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    name="communication_consent"
-                    checked="{ownerInfo.communication_consent}"
-                    onChange="{handleChangeCheckbox}"
-                  />
-                  <label class="form-check-label" for="communicationConsent">
-                    Check this box to give your consent to receive text, calls,
-                    and/or email messages using your phone number and email
-                    above for login help, pet reminders, and applicable
-                    promotional communications.
-                  </label>
-                </div>
-              </div> -->
+              <div class="form-check ps-0">
+                <input
+                  type="radio"
+                  id="vaccinationReaction-no"
+                  name="vaccinationReaction"
+                  value="false"
+                />
+                <label for="vaccinationReaction-no">No</label>
+              </div>
             </div>
 
             <div class="d-flex justify-content-end">
@@ -576,6 +466,7 @@
         </div>
       </div>
     </div>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

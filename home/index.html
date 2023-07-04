@@ -115,29 +115,26 @@
                 </svg>
               </a>
             </div>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-              "
-            >
-              <a class="nav-menu" href="/home">Home</a>
+            <div class="navMenuContainer">
+              <a class="nav-menu active" href="/home">Home</a>
               <a class="nav-menu" href="/owner-form">Profile</a>
               <a class="nav-menu" href="/check-in">Check-In</a>
+              <a class="logoutBtn" href="#"
+                ><span>LOGOUT</span
+                ><span
+                  ><i class="fa-solid fa-arrow-right-from-bracket"></i></span
+              ></a>
             </div>
           </div>
         </div>
       </header>
-      <div className="flex-grow-1" style="margin-top: 5rem">
+
+      <div style="margin-top: 6rem">
         <div class="container">
-          <div class="d-flex justify-content-end">
+          <div class="container d-flex justify-content-end addPetContainer">
             <a href="/pet-form"
               ><button class="addPet">
-                <span>
-                  <i class="bi bi-plus-circle"></i>
-                </span>
+                <span> <i class="fa-solid fa-plus"></i> </span>
                 <span>Add Pet</span>
               </button></a
             >
