@@ -80,7 +80,7 @@
   border: 2px solid #cbcbcb;
 
   cursor: pointer;
-  transition: all 0.2s linear;
+  /* transition: all 0.2s linear; */
 }
 
 .species:hover {

@@ -129,23 +129,26 @@
       </header>
 
       <div class="wrapper">
-        <div class="container">
-          <form class="form">
-            <!-- PetCheckItem components -->
-            <div class="FormGroupS mb-4 d-flex flex-column" controlId="checkIn">
-              <div class="FormCheckS inline">
-                <label class="form-check-label" for="checkIn">Pet Name</label>
+        <div class="container d-flex justify-content-center">
+          <!-- <div class="checkInWrapper"> -->
+          <div class="checkInContainer">
+            <div class="checkInItem mb-4 d-flex flex-column">
+              <div class="formGroup">
                 <input
                   class="form-check-input"
                   type="checkbox"
                   name="checkIn"
-                  checked
+                  id="checkIn"
+                  onChange="{handleChangeCheckbox}"
                 />
+                <label for="checkIn">Pet Name</label>
+                <button class="moreInfoBtn">
+                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-minus d-none"></i>
+                </button>
               </div>
-              <button class="ButtonS" variant="primary">
-                <svg>...</svg>
-              </button>
-              <div class="StyledDiv d-block">
+
+              <div class="StyledDiv">
                 <div>
                   <span>Species:</span>
                   <span>DOG</span>
@@ -164,54 +167,48 @@
                 </div>
               </div>
               <div class="GridS">
-                <div class="Form.Group">
-                  <div class="FormCheckS2 inline">
-                    <label class="form-check-label" for="pregnant"
-                      >Pregnant Question</label
-                    >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="pregnant"
-                      checked
-                    />
-                  </div>
+                <div class="FormCheckS2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="pregnant"
+                    id="pregnant"
+                  />
+                  <label class="form-check-label" for="pregnant"
+                    >Pregnant Question</label
+                  >
                 </div>
-                <div class="Form.Group">
-                  <div class="FormCheckS2 inline">
-                    <label class="form-check-label" for="sick"
-                      >Sick Question</label
-                    >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="sick"
-                      checked
-                    />
-                  </div>
+
+                <div class="FormCheckS2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="sick"
+                    id="sick"
+                  />
+                  <label class="form-check-label" for="sick"
+                    >Sick Question</label
+                  >
                 </div>
-                <div class="Form.Group">
-                  <div class="FormCheckS2 inline">
-                    <label class="form-check-label" for="heartwormPrevention"
-                      >Heartworm Prevention</label
-                    >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      name="heartwormPrevention"
-                      checked
-                    />
-                  </div>
+
+                <div class="FormCheckS2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="heartwormPrevention"
+                    id="heartwormPrevention"
+                  />
+                  <label class="form-check-label" for="heartwormPrevention"
+                    >Heartworm Prevention</label
+                  >
                 </div>
               </div>
             </div>
-            <!-- End of PetCheckItem components -->
             <div class="d-flex justify-content-end">
-              <button class="SubmitButton" variant="primary" type="submit">
-                Check In Button
-              </button>
+              <button class="btnDark">Request Check-In</button>
             </div>
-          </form>
+          </div>
+          <!-- </div> -->
         </div>
       </div>
     </div>

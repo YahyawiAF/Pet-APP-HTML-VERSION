@@ -3,7 +3,9 @@
   --green: #3fcf8e;
   --darkGreen: #34b27b;
 }
-
+* {
+  transition: 0.2s all linear;
+}
 body {
   font-family: "Roboto", sans-serif !important;
 }
@@ -58,7 +60,7 @@ textarea::placeholder {
   font-size: 16px;
   font-weight: bold;
   text-decoration: unset;
-  transition: 0.2s all linear;
+  /* transition: 0.2s all linear; */
 }
 .nav-menu:hover {
   color: white;
@@ -69,21 +71,24 @@ textarea::placeholder {
   font-size: 13px;
   font-weight: bold;
   text-decoration: unset;
-  background-color: crimson;
+  background: crimson;
   width: 100px;
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
   border: 2px solid white;
-  transition: 0.2s all linear;
+  transition: 10ms all linear !important;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
 }
 .logoutBtn:hover {
-  background-color: transparent;
   color: crimson;
-  border: 2px solid crimson;
+  background: var(--dark);
+  border-color: crimson;
+}
+.logoutBtn > span:nth-child(2) {
+  display: none;
 }
 
 .wrapper {
@@ -98,7 +103,7 @@ textarea::placeholder {
   border-radius: 5px;
   padding: 0.3rem 2rem;
 
-  transition: 0.2s all linear;
+  /* transition: 0.2s all linear; */
 }
 
 .btnDark:hover {
@@ -162,5 +167,6 @@ textarea::placeholder {
   }
   .logoutBtn > span:nth-child(2) {
     font-size: 20px;
+    display: block;
   }
 }
